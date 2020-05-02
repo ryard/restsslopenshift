@@ -3,5 +3,5 @@ metadata:
     api.service.kubernetes.io/path: /sayHello/
 spec:
   ports:
-    - port: 80
+    - port: 443
       targetPort: 8443
