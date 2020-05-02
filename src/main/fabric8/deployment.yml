@@ -1,0 +1,25 @@
+spec:
+  template:
+    spec:
+      containers:
+        -
+          resources:
+            requests:
+              cpu: "0.2"
+              memory: 256Mi
+            limits:
+              cpu: "1.0"
+              memory: 256Mi
+          env:
+          - name: SERVICE_IP
+            valueFrom:
+              configMapKeyRef:
+                name: spring-boot-rest-config
+                key: serverip
+          - name: SERVICE_PORT
+            valueFrom:
+              configMapKeyRef:
+                name: spring-boot-rest-config
+                key: serverport
+          - name: SPRING_APPLICATION_JSON
+            value: '{"server":{"undertow":{"io-threads":1, "worker-threads":2 }}}'
