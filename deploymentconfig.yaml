@@ -1,4 +1,3 @@
-# This is final dc created by s2i deployment in openshift
 kind: DeploymentConfig
 apiVersion: apps.openshift.io/v1
 metadata:
@@ -7,8 +6,8 @@ metadata:
   selfLink: >-
     /apis/apps.openshift.io/v1/namespaces/restproject/deploymentconfigs/s2i-fuse74-spring-boot-cxf-jaxrs
   uid: bebd5366-9306-47c7-9f41-403e8bd9885f
-  resourceVersion: '19201215'
-  generation: 7
+  resourceVersion: '19203750'
+  generation: 8
   creationTimestamp: '2020-05-03T09:26:59Z'
   labels:
     app: s2i-fuse74-spring-boot-cxf-jaxrs
@@ -95,7 +94,7 @@ spec:
             httpGet:
               path: /health
               port: 8081
-              scheme: HTTP
+              scheme: HTTPS
             initialDelaySeconds: 180
             timeoutSeconds: 1
             periodSeconds: 10
@@ -125,28 +124,27 @@ spec:
       securityContext: {}
       schedulerName: default-scheduler
 status:
-  observedGeneration: 7
+  observedGeneration: 8
   details:
     message: config change
     causes:
       - type: ConfigChange
   availableReplicas: 1
   unavailableReplicas: 0
-  latestVersion: 6
-  updatedReplicas: 1
+  latestVersion: 7
+  updatedReplicas: 0
   conditions:
     - type: Available
       status: 'True'
-      lastUpdateTime: '2020-05-03T09:46:37Z'
-      lastTransitionTime: '2020-05-03T09:46:37Z'
+      lastUpdateTime: '2020-05-03T09:56:57Z'
+      lastTransitionTime: '2020-05-03T09:56:57Z'
       message: Deployment config has minimum availability.
     - type: Progressing
-      status: 'True'
-      lastUpdateTime: '2020-05-03T09:46:37Z'
-      lastTransitionTime: '2020-05-03T09:46:15Z'
-      reason: NewReplicationControllerAvailable
+      status: Unknown
+      lastUpdateTime: '2020-05-03T09:57:35Z'
+      lastTransitionTime: '2020-05-03T09:57:35Z'
       message: >-
-        replication controller "s2i-fuse74-spring-boot-cxf-jaxrs-6" successfully
-        rolled out
+        replication controller "s2i-fuse74-spring-boot-cxf-jaxrs-7" is waiting
+        for pod "s2i-fuse74-spring-boot-cxf-jaxrs-7-deploy" to run
   replicas: 1
   readyReplicas: 1
