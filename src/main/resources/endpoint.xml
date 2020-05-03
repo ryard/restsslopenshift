@@ -40,7 +40,7 @@
             <bean class="org.apache.cxf.jaxrs.swagger.Swagger2Feature"/>
         </jaxrs:features>
     </jaxrs:server>
-    
+    <!--
     <httpu:engine-factory id="tls-config">
         <httpu:engine port="${serverport}">
             <httpu:tlsServerParameters>
@@ -51,6 +51,6 @@
             </httpu:tlsServerParameters>
         </httpu:engine>
     </httpu:engine-factory>
-    
+    -->
     <bean id="resource" class="io.fabric8.quickstarts.cxf.jaxrs.HelloServiceImpl"/> 
 </beans>
