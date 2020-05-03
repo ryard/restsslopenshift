@@ -32,7 +32,7 @@
         http://cxf.apache.org/core 									http://cxf.apache.org/schemas/core.xsd 
 		http://cxf.apache.org/jaxrs 								http://cxf.apache.org/schemas/jaxrs.xsd">
 
-    <jaxrs:server  address="https://${serverip}:${serverport}">
+    <jaxrs:server  address="/">
         <jaxrs:serviceBeans>
             <ref bean="resource"/>
         </jaxrs:serviceBeans>
@@ -41,7 +41,7 @@
         </jaxrs:features>
     </jaxrs:server>
     
-     <httpu:engine-factory id="tls-config">
+    <!-- <httpu:engine-factory id="tls-config">
         <httpu:engine port="${serverport}">
             <httpu:tlsServerParameters>
                 <sec:keyManagers keyPassword="${keystorepassword}">
@@ -50,7 +50,7 @@
             </sec:keyManagers>
             </httpu:tlsServerParameters>
         </httpu:engine>
-    </httpu:engine-factory>
+    </httpu:engine-factory>-->
     
     <bean id="resource" class="io.fabric8.quickstarts.cxf.jaxrs.HelloServiceImpl"/> 
 </beans>
